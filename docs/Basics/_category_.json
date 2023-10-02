@@ -1,0 +1,8 @@
+{
+  "label": "Basics",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "This will be a brief Introduction to the basics of the app as well as an Introduction to React Native"
+  }
+}
