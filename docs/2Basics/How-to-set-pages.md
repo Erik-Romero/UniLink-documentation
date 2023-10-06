@@ -8,36 +8,53 @@ UniLink has certain pages that will need to be set up, therefore the following w
 ## The is the site map of our application 
 ```
 App
+|
 |---MainContainer
 |         |
 |         |---Splash Screen
+|         |---Sign Up SCreen
 |         |---New User Screen
-|         |---Authentication Screen
+|         |---Collaboration Screens
+|         |---Notifications Screen
+|         |---Portfolio Screen
+|         |---Message Screen 
+|         |---Camera Screen
 |         |---Login Screen
-|         |---Home Container
+|         |---Tab Navigator
 |                   |
-|                   |---Home Screen
-|                   |---EventContainer
+|                   |---Home Stack
 |                   |         |
-|                   |         |---Create event page
-|                   |         |---Event Page
-|                   |         |---Event Details Page
+|                   |         |---Home Screen
+|                   |         |---Create event screen
+|                   |         |---Event Screen
+|                   |         |---Event Details Screen
 |                   |         
 |                   |---News Container 
 |                   |         |
-|                   |         |---News Page
-|                   |         |---News Details Page
+|                   |         |---News Screen
+|                   |         |---News Details Screen
 |                   |     
-|                   |---Connections Page
+|                   |---Connections Screen
 |                   |         |
-|                   |         |---Mutuals Page
-|                   |         |---New people Page
-|                   |         |---Other's profile Page
+|                   |         |---Mutuals Screen
+|                   |         |---Connections Screen
+|                   |         |---Other's profile Screen
 |                   |         
-|                   |---Profile Page
-|                   |---Notification
-|                   |---Messaging Screen
-|                   |---Group Page
+|                   |---Group Stack
+|                   |         |
+|                   |         |---Create Group Screen
+|                   |         |---Group Screen
+|                   |         |---Group Details Screen
+|                   |         |---Group Owners Screen
+|                   |         |---Group Schedule Screen
+|                   |         |---Group Edit Screen
+|                   |
+|                   |---Profile Screen
+
+
+
+
+
 
 
 ```

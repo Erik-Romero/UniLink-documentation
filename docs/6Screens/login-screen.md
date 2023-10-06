@@ -25,6 +25,7 @@ const LoginScreen = ({ navigation }) => {
   const [loading, setLoading] = useState(false);
   const auth = FIREBASE_AUTH;
 ```
+
 ```jsx
   const saveLoginInfo = async (email, password) => {
     try {
@@ -37,6 +38,9 @@ const LoginScreen = ({ navigation }) => {
       console.error('Error saving login info:', error);
     }
   };
+```
+
+```jsx
   const signIn= async ()=>{
     setLoading(true);
     try
@@ -53,7 +57,9 @@ const LoginScreen = ({ navigation }) => {
         setLoading(false);
     }
 }
-  
+```
+
+```jsx
   return (
     <View style={styles.container}>
     <KeyboardAvoidingView behavior="padding">
@@ -68,6 +74,9 @@ const LoginScreen = ({ navigation }) => {
     </View>
   );
 };
+```
+
+```jsx
 
 const styles = StyleSheet.create({
   container: {
