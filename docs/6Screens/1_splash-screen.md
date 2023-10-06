@@ -36,7 +36,7 @@ import { signInWithEmailAndPassword} from "firebase/auth";
 
 ## Setting our Constants
 
-The constants that are set up are references to the assets folder to retrieve the Splash background Image and the Latech Logo. As well as a to reference the FIREBASE_AUTH object so that we can verify the person logging in.
+The constants that are set up are references to the assets folder so that we will be able to retrieve the Splash background Image and the Latech Logo. As well as a to reference the FIREBASE_AUTH object so that we can verify the person logging in.
 
 ```js
 const BGImage = require('../../../assets/SplashBG.png');
