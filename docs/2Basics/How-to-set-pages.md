@@ -13,28 +13,32 @@ App
 |         |
 |         |---Splash Screen
 |         |---Sign Up SCreen
+|         |---Login Screen
 |         |---New User Screen
 |         |---Collaboration Screens
-|         |---Notifications Screen
 |         |---Portfolio Screen
-|         |---Message Screen 
 |         |---Camera Screen
-|         |---Login Screen
 |         |---Tab Navigator
 |                   |
-|                   |---Home Stack
+|                   |---Home Drawer
 |                   |         |
-|                   |         |---Home Screen
-|                   |         |---Create event screen
-|                   |         |---Event Screen
-|                   |         |---Event Details Screen
+|                   |         |---Home Stack
+|                   |         |     |---Home Screen
+|                   |         |     |---Create event screen
+|                   |         |     |---Event Screen
+|                   |         |     |---Event Details Screen
+|                   |         |
+|                   |         |---Rsvp Events
+|                   |         |---Liked Projects
+|                   |         |---Message screen
+|                   |         |---notifications
 |                   |         
 |                   |---News Container 
 |                   |         |
 |                   |         |---News Screen
 |                   |         |---News Details Screen
 |                   |     
-|                   |---Connections Screen
+|                   |---Connections Tab Screen
 |                   |         |
 |                   |         |---Mutuals Screen
 |                   |         |---Connections Screen
@@ -51,21 +55,13 @@ App
 |                   |
 |                   |---Profile Screen
 
-
-
-
-
-
-
 ```
-
-
 
 ## Lets format our folders
 
 The following is how UniLink has stored the screens that the application uses within the project folders.
 
-**Insert Image here** 
+![Example banner](./img/Screenshot%202023-10-11%20095901.png)
 
 All the screens will be stored within the Screens folder.
 Therfore go ahead and create a folder named Screens and add it to the project. This is how It should end up looking:

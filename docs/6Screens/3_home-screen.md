@@ -14,6 +14,8 @@ This component uses the following external libraries:
 - `react-native`: A library for building mobile applications using React Native.
 - `react-native-paper`: A library that provides components and theming for React Native apps.
 
+Therefore we will need to import them all as so:
+
 ```js
 import React,{ useState, useEffect } from 'react';
 import { View, StyleSheet, StatusBar, ActivityIndicator,} from 'react-native';
@@ -22,54 +24,56 @@ import { FIREBASE_AUTH } from '../../../src/firebase_init/firebase';
 import { primaryColors } from '../../Components/Colors';
 import { fetchUserData} from '../../Components/UserData';
 import EventsScreen from './EventsScreen';
+import updateGroupIds from '../../DBFunctions/updateGroupIds';
+import { updateProfile } from 'firebase/auth';
 ```
 
-## Props
 
-The `HomeScreen` component does not accept any props.
-
-## State
-
-The component has the following state:
-
-- `users` (array): Stores the fetched event data.
-- `refreshing` (boolean): Represents the refreshing status of the ScrollView.
+## Setting our Constants
 
 ```jsx
 const HomeScreen = ({navigation}) => {
   const [users, setUsers] = useState([]);
-  const [refreshing, setRefreshing] = React.useState(false);
   const [userDetails, setUserDetails] = useState(null);
   const [isLoading, setIsLoading] = useState(true); // State to track if data is being fetched
 ```
+## Functions
 
-## useEffect Hook
+### fetchDataandUserData
+
+```jsx 
+   const fetchDataAndUserData = async () => {
+    setIsLoading(true); // Set loading state to true when fetching data
+    const eventData = await fetchData();
+    setUsers(eventData);
+    const userData = await fetchUserData(FIREBASE_AUTH.currentUser?.uid);
+    setUserDetails(userData[0]);
+    console.log(FIREBASE_AUTH.currentUser?.uid);
+    console.log(userData[0]);
+    const newDisplayName =userData[0].FirstName+" "+userData[0].LastName;
+    updateProfile(FIREBASE_AUTH.currentUser,{
+      displayName: newDisplayName,
+    })
+    .then(() => {
+      console.log("Display name updated successfully:", newDisplayName);
+    })
+    .catch((error) => {
+      console.error("Error updating display name:", error.message);
+    });
+```
+
+### useEffect Hook
 
 The `useEffect` hook is used to fetch the event data from Firebase when the component mounts. It calls the `fetchEventData` function, which internally uses the `fetchData` function from `../DBFunctions/FetchData` to fetch event data and updates the `users` state.
 
-```jsx 
- 
-  const fetchDataAndUserData = async () => {
-    setIsLoading(true); // Set loading state to true when fetching data
-    const usersData = await fetchData();
-    setUsers(usersData);
-    const userData = await fetchUserData(FIREBASE_AUTH.currentUser?.uid);
-    setUserDetails(userData[0]);
-    console.log(userDetails);
-    setIsLoading(false); // Set loading state to false when data fetching is complete
-  };
-```
-
 ```jsx
   useEffect(() => {
-    fetchDataAndUserData();  
-    },[]);
+    updateGroupIds();
+    fetchDataAndUserData();      
+  },[]);
 ```
 
-## Pull-to-Refresh with RefreshControl
-
-The component implements pull-to-refresh functionality using the `RefreshControl` component from `react-native`. When users pull down the ScrollView, it triggers the `onRefresh` function from `../DBFunctions/RefreshFunctions`, which updates the `refreshing` state and refetches the event data.
-
+## The Screen
 
 ```jsx
     return (
