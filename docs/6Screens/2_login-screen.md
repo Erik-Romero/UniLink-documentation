@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Login Screen
 
-The `LoginScreen` will be the seconf screen the user sees. It wil displays two input prompts allowing the user to enter their email and password. The component utilizes the `Stylesheet`, `Button`, `keyboardAvoidingView`, `StyleSheet`, components from React Native. It also uses the Firebase Authentication to verify if a user can properly login.
+The `LoginScreen` will be the second screen the user sees. It wil displays two input prompts allowing the user to enter their email and password. The component utilizes the `Stylesheet`, `Button`, `keyboardAvoidingView`, `StyleSheet`, components from React Native. It also uses the Firebase Authentication to verify if a user can properly login.
 
 ## Dependencies
 
