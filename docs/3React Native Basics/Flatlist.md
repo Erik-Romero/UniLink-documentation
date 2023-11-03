@@ -44,3 +44,11 @@ When using `FlatList`, keep these best practices in mind:
 ## Conclusion
 
 `FlatList` is a powerful component that is integral to the development of React Native applications that handle lists. By following best practices and understanding its props and capabilities, developers can create smooth and performant list-based interfaces.
+
+:::note
+
+For more information head over to React native's website and documentation.
+
+[Click Here](https://reactnative.dev/docs/getting-started)
+
+:::

@@ -4,7 +4,9 @@ sidebar_position: 4
 
 # Main Stack
 
+This file is where every screen on our app originates from.
 
+Therfore we call every screen, create a constant and populate the stack with the screens.
 
 ```jsx
 //////////////////////////////////////////////////////////////////////////////////////
@@ -42,7 +44,13 @@ const collaborationName = 'CollaborationScreen'
 export const Login='LoginScreen';
 const SignUp ='SignUpScreen';
 export const Notifications = "NotifScreen";
+```
 
+The following is where the MainStack is actaully initalized.
+
+The prop headershown false/true is considered for each individual screen since some screen have further stacks  
+
+```jsx
 ////////////////////////////////////////////////////////////////////////////////////////
 /////////////////// Creating the Main stack navigator //////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////

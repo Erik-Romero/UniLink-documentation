@@ -47,3 +47,10 @@ Here are some key props that the `View` component accepts:
 `View` is a versatile and necessary component for any React Native application, providing the means to create and structure the visual interface. Its integration with flexbox and a wide array of styling options allows developers to implement complex designs and interactions within their applications.
 
 
+:::note
+
+For more information head over to React native's website and documentation.
+
+[Click Here](https://reactnative.dev/docs/getting-started)
+
+:::

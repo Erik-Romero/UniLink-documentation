@@ -43,3 +43,10 @@ Unlike `FlatList` or `SectionList`, `ScrollView` renders all of its child compon
 `ScrollView` is an essential component for scrolling content, suited for scenarios where the number of items is limited and known. It's simple to use and provides basic scrolling capabilities, but for performance-critical applications or large lists, consider using more suitable components like `FlatList` or `VirtualizedList`.
 
 
+:::note
+
+For more information head over to React native's website and documentation.
+
+[Click Here](https://reactnative.dev/docs/getting-started)
+
+:::
