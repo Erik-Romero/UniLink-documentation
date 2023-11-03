@@ -36,7 +36,7 @@ import { signInWithEmailAndPassword} from "firebase/auth";
 
 ## Setting our Constants
 
-The constants that are set up are references to the assets folder to retrieve the Splash background Image and the Latech Logo. As well as a to reference the FIREBASE_AUTH object so that we can verify the person logging in.
+The constants that are set up are references to the assets folder so that we will be able to retrieve the Splash background Image and the Latech Logo. As well as a to reference the FIREBASE_AUTH object so that we can verify the person logging in.
 
 ```js
 const BGImage = require('../../../assets/SplashBG.png');
@@ -45,6 +45,9 @@ const auth = FIREBASE_AUTH;
 ```
 Now we will step inside the Component and establish a constant within the component. This assures the constant is only called when the component is called rather then just being called once outside the component.
 
+:::note
+Why use useState? [Click here](../3React%20Native%20Basics/useState.md)  
+:::
 ```js
 export default function SplashScreen({ navigation }) {
   const [loading, setLoading] = useState(false);
@@ -56,6 +59,10 @@ export default function SplashScreen({ navigation }) {
 ### SignIn
 
 The SignIn function does exactly what the name implies, it calls the signInWithEmailAndPassword function to attempt to sign someone in. In this custom function it signs someone in and then takes them to the TabNavigator Screen.
+
+:::note
+For further documentation on signInWithEmailandPassword [Click Here](https://firebase.google.com/docs/auth/web/password-auth)
+:::
 
 ```js
  // Set up your sign-in function
