@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Event Details
 
-The `HomeScreen` will be responsible for displaying a home screen with sections for events. It fetches data from Firebase and renders the information in a single scroll view.
+The `Event Details` will be responsible for displaying the event details for every event. 
 
 ## Dependencies
 
@@ -23,7 +23,7 @@ import { CircularImage } from '../../Components/CircleImage';
 import { accentColors, primaryColors } from '../../Components/Colors';
 import RedLine from './Components/RedLine';
 import { FIREBASE_AUTH } from '../../../src/firebase_init/firebase';
-
+import CommentSection from '../../Components/CommentSection';
 ```
 
 ## Props
@@ -34,9 +34,13 @@ The `EventScreenDetails` component does not accept any props.
 
 The component has the following state:
 
-- `users` (array): Stores the fetched event data.
-- `refreshing` (boolean): Represents the refreshing status of the ScrollView.
+- `editMode` (array): Stores the fetched event data.
+- `editedTitle` (boolean): Represents the status of editable title.
+- `editedDate` boolean:Represents the status of editable date.
+- `editedLocation` boolean:Represents the status of editable Location.
+- `editedDescription` boolean:Represents the status of editable description.
 
+The following are the names and google map links associated with each location. 
 ```jsx
 const locationUrls = {
   "Barnes & Noble Bookstore": "https://maps.app.goo.gl/PDGzFzzMJV7bKwdt5",
@@ -69,16 +73,10 @@ const EventDetailsScreen = () => {
 
 ## Functions
 
-### useEffect Hook
-
-The `useEffect` hook is used to fetch the event data from Firebase when the component mounts. It calls the `fetchEventData` function, which internally uses the `fetchData` function from `../DBFunctions/FetchData` to fetch event data and updates the `users` state.
-
-```jsx
-
-```
+`
 
 ### handleEditButton
-
+The following sets the edit Mode to true. If and only if the creator matches the id.
 ```jsx
 const handleEditButton = () => {
     if (event.Creator === User_ID) {
@@ -87,7 +85,7 @@ const handleEditButton = () => {
   };
 ```
 ### handleSaveEvent
-
+When the document is saved it updated on the firebase. This is the function that should be called.
 ```jsx
 const handleSaveEvent = async (eventId) => {
     try {
@@ -102,7 +100,7 @@ const handleSaveEvent = async (eventId) => {
 
 ```
 ### handleSaveButton
-
+This handles the save button implementaion. When the save button is pushed it will set the editMode to false.
 ```jsx
 const handleSaveButton = () => {
     // Implement the logic to update the event data in your Firebase or state management here
@@ -111,7 +109,7 @@ const handleSaveButton = () => {
   };
 ```
 ### openGoogleMaps
-
+The following will read the data that the object is linked with and open the correct link.
 ```jsx
 const openGoogleMaps = (location) => {
     const url = locationUrls[location];
